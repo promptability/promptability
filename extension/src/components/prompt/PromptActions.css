@@ -1,0 +1,28 @@
+.prompt-actions {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid;
+}
+
+/* Light theme */
+body:not(.dark) .prompt-actions {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+/* Dark theme */
+body.dark .prompt-actions {
+  background-color: #18181b;
+  border-color: #27272a;
+}
+
+.prompt-actions__replace {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.prompt-actions__group {
+  display: flex;
+  gap: 8px;
+}

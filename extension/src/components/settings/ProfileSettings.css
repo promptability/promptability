@@ -1,0 +1,100 @@
+/* Container & theming */
+.profile-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.875rem;
+    padding: 1rem;
+  }
+  .profile-settings.light {
+    --border: #d1d5db;
+    --bg-input: #ffffff;
+    --text-input: #111827;
+    --bg-save: #3b82f6;
+  }
+  .profile-settings.dark {
+    --border: #374151;
+    --bg-input: #1f2937;
+    --text-input: #f3f4f6;
+    --bg-save: #2563eb;
+  }
+  
+  /* Title */
+  .profile-settings__title {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  /* Message */
+  .profile-settings__message {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+  }
+  .profile-settings__message--success {
+    background: #d1fae5;
+    color: #065f46;
+  }
+  .profile-settings__message--error {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+  
+  /* Rows & inputs */
+  .profile-settings__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .profile-settings__row--textarea {
+    gap: 0.5rem;
+  }
+  .profile-settings__input,
+  .profile-settings__select,
+  .profile-settings__textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    background: var(--bg-input);
+    color: var(--text-input);
+    font-size: 0.875rem;
+  }
+  .profile-settings__textarea {
+    resize: vertical;
+    min-height: 4rem;
+  }
+  
+  /* Save button */
+  .profile-settings__save {
+    padding: 0.5rem 1rem;
+    background: var(--bg-save);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  .profile-settings__save:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Loading spinner */
+  .profile-settings__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid transparent;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  

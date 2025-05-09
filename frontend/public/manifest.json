@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Promptability AI (Simple)",
+  "version": "1.0.0",
+  "description": "Simple test version of Promptability AI",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "exclude_matches": ["*://chrome.google.com/*"]
+    }
+  ]
+}

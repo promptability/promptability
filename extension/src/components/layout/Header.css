@@ -1,0 +1,66 @@
+/* root header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+  }
+  
+  /* theme variables */
+  .header.light {
+    --bg-color: #f3f4f6;      /* gray-100 */
+    --border-color: #d1d5db;  /* gray-300 */
+    --icon-color: #4b5563;    /* gray-600 */
+    --icon-hover-bg: rgba(0, 0, 0, 0.05);
+    --text-color: #111827;    /* gray-900 */
+  }
+  .header.dark {
+    --bg-color: #111827;      /* gray-950 */
+    --border-color: #374151;  /* gray-800 */
+    --icon-color: #9ca3af;    /* gray-400 */
+    --icon-hover-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #f9fafb;    /* gray-100 */
+  }
+  
+  /* left side */
+  .header__left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .header__logo {
+    color: var(--primary-color, #3b82f6); /* fallback to blue-500 */
+  }
+  .header__title {
+    font-size: 0.875rem;   /* text-sm */
+    font-weight: 600;
+    color: var(--text-color);
+  }
+  
+  /* right side */
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* icon buttons (settings, close, back) */
+  .header__icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 9999px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .header__icon-button svg {
+    color: var(--icon-color);
+  }
+  .header__icon-button:hover {
+    background-color: var(--icon-hover-bg);
+  }
+  

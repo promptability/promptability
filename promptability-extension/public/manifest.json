@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Promptability AI",
+  "version": "1.0.0",
+  "description": "Smart Prompt Generator for AI models",
+
+  "action": {
+    "default_popup": "index.html"
+  },
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",         
+    "storage",
+    "scripting",
+    "contextMenus",
+    "identity"
+  ],
+
+  "host_permissions": [
+    "https://*.googleapis.com/*",
+    "https://*.firebaseio.com/*"
+  ],
+
+  "oauth2": {
+    "client_id": "695953124643-m0hathmo9oa1qvc9919qfqmae738snok.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  },
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages":
+      "script-src 'self'; object-src 'self'; connect-src 'self' http://127.0.0.1:8000 http://localhost:8000 https://*.googleapis.com https://*.firebaseio.com https://www.gstatic.com https://*.firebase.com https://*.firebaseapp.com wss://*.firebaseio.com;"
+  }
+}

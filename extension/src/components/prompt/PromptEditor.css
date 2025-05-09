@@ -1,0 +1,31 @@
+.prompt-editor {
+    position: relative;
+    padding: 0.75rem;               /* p-3 */
+  }
+  
+  .prompt-editor__box {
+    border: 1px solid #d1d5db;      /* gray-300 */
+    border-radius: 0.5rem;           /* rounded-lg */
+    padding: 0.75rem;                /* p-3 */
+    background: #ffffff;
+  }
+  
+  body.dark .prompt-editor__box {
+    background: #111827;             /* gray-950 */
+    border-color: #1f2937;           /* gray-800 */
+  }
+  
+  .prompt-editor__text {
+    white-space: pre-wrap;
+    font-family: Menlo, monospace;
+    font-size: 0.75rem;              /* text-xs */
+  }
+  
+  .prompt-editor__dropdowns {
+    position: absolute;
+    bottom: 0.75rem;                  /* bottom-3 */
+    right: 0.75rem;                   /* right-3 */
+    display: flex;
+    gap: 0.5rem;                      /* space-x-2 */
+  }
+  

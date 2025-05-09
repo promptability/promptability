@@ -1,0 +1,65 @@
+/* content-style.css */
+/* Styles for the Promptability AI overlay */
+
+#promptability-overlay-container {
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  #promptability-overlay-container > div {
+    pointer-events: auto;
+  }
+  
+  /* Animation for the overlay */
+  @keyframes promptability-fade-in {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -90%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -100%);
+    }
+  }
+  
+  .promptability-overlay {
+    animation: promptability-fade-in 0.2s ease-out forwards;
+  }
+  
+  /* Reset styles for the overlay container to avoid conflicts with page styles */
+  #promptability-overlay-container,
+  #promptability-overlay-container * {
+    box-sizing: border-box;
+    line-height: normal;
+  }
+  
+  /* Tooltip styles */
+  .promptability-tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    background-color: #1e40af;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .promptability-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1e40af transparent transparent transparent;
+  }

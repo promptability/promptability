@@ -1,0 +1,52 @@
+.app-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+  .app-settings__title {
+    margin: 0;
+    font-weight: 500;
+  }
+  .app-settings__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .app-settings__select {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border: 1px solid;
+    border-radius: 0.25rem;
+    background: var(--bg-input);
+    color: var(--text-input);
+  }
+  .app-settings__footer {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+  }
+  .app-settings__reset {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    background: var(--bg-reset);
+    color: var(--text-reset);
+    cursor: pointer;
+  }
+  .app-settings.light {
+    --bg-input: #ffffff;
+    --text-input: #111827;
+    --border: #e5e7eb;
+    --bg-reset: #f3f4f6;
+    --text-reset: #374151;
+  }
+  .app-settings.dark {
+    --bg-input: #1f2937;
+    --text-input: #f3f4f6;
+    --border: #374151;
+    --bg-reset: #374151;
+    --text-reset: #d1d5db;
+  }
+  

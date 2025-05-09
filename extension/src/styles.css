@@ -1,0 +1,331 @@
+/* =========================
+   src/styles.css
+   ========================= */
+
+/* ----------------------------------
+   1) Global & reset
+   ---------------------------------- */
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+   }
+   html, body {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     height: 100%;
+     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+     line-height: 1.5;
+     font-size: 14px;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
+   :root {
+     color-scheme: light dark;
+   }
+   body {
+     min-width: 340px;
+     min-height: 500px;
+     max-width: 400px;
+     max-height: 600px;
+     overflow: hidden;
+   }
+   html.dark body {
+     background: #111827;
+     color: #f3f4f6;
+   }
+   
+   /* scrollbar */
+   ::-webkit-scrollbar {
+     width: 6px; height: 6px;
+   }
+   ::-webkit-scrollbar-track {
+     background: rgba(0,0,0,0.1);
+     border-radius: 10px;
+   }
+   ::-webkit-scrollbar-thumb {
+     background: rgba(0,0,0,0.2);
+     border-radius: 10px;
+   }
+   html.dark ::-webkit-scrollbar-track {
+     background: rgba(255,255,255,0.1);
+   }
+   html.dark ::-webkit-scrollbar-thumb {
+     background: rgba(255,255,255,0.2);
+   }
+   ::-webkit-scrollbar-thumb:hover {
+     background: rgba(0,0,0,0.3);
+   }
+   html.dark ::-webkit-scrollbar-thumb:hover {
+     background: rgba(255,255,255,0.3);
+   }
+   
+   /* ----------------------------------
+      2) Container wrapper
+      ---------------------------------- */
+   .prompt-wrapper {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+     padding: 1.5rem;
+     background: #f3f4f6;
+   }
+   html.dark .prompt-wrapper {
+     background: #111827;
+   }
+   
+   /* card */
+   .prompt-card {
+     width: 100%;
+     max-width: 24rem;
+     transform: scale(0.9);
+     border-radius: 1rem;
+     overflow: hidden;
+     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+     background: #ffffff;
+     color: #111827;
+   }
+   html.dark .prompt-card {
+     background: #1f2937;
+     color: #f3f4f6;
+     box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+   }
+   
+   /* ----------------------------------
+      3) Header
+      ---------------------------------- */
+   .header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.5rem 0.75rem;
+     border-bottom: 1px solid #d1d5db;
+     background: #f3f4f6;
+   }
+   html.dark .header {
+     border-bottom: 1px solid #374151;
+     background: #111827;
+   }
+   .header__left {
+     display: flex;
+     align-items: center;
+     gap: 0.375rem;
+   }
+   .header__logo {
+     color: #3b82f6;
+   }
+   .header__title {
+     font-size: 0.875rem;
+     font-weight: 600;
+   }
+   .header__right {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+   }
+   /* icon button */
+   .icon-btn {
+     padding: 0.25rem;
+     border-radius: 9999px;
+     background: transparent;
+     cursor: pointer;
+     transition: background-color 0.2s;
+   }
+   .icon-btn svg {
+     display: block;
+     color: #4b5563;
+   }
+   html.dark .icon-btn svg {
+     color: #9ca3af;
+   }
+   .icon-btn:hover {
+     background: rgba(0,0,0,0.05);
+   }
+   html.dark .icon-btn:hover {
+     background: rgba(255,255,255,0.1);
+   }
+   
+   /* ----------------------------------
+      4) Prompt body + dropdowns
+      ---------------------------------- */
+   .prompt-body {
+     position: relative;
+     padding: 0.75rem;
+   }
+   .prompt-body .editor-box {
+     border: 1px solid #d1d5db;
+     border-radius: 0.5rem;
+     padding: 0.75rem;
+     background: #ffffff;
+     font-family: monospace;
+     font-size: 0.75rem;
+     white-space: pre-wrap;
+   }
+   html.dark .prompt-body .editor-box {
+     border: 1px solid #374151;
+     background: #1f2937;
+   }
+   /* dropdown container */
+   .dropdown-group {
+     position: absolute;
+     bottom: 0.75rem;
+     right: 0.75rem;
+     display: flex;
+     gap: 0.5rem;
+   }
+   /* dropdown button */
+   .dropdown-btn {
+     width: 1.5rem; height: 1.5rem;
+     border-radius: 9999px;
+     background: #3b82f6;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+   }
+   .dropdown-btn svg { color: #fff; }
+   /* menu panel */
+   .dropdown-menu {
+     position: absolute;
+     right: 0; margin-top: 0.5rem;
+     width: 10rem;
+     background: #1f2937;
+     border: 1px solid #374151;
+     border-radius: 0.5rem;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+     z-index: 20;
+   }
+   .dropdown-menu .menu-header {
+     padding: 0.25rem 0.5rem;
+     font-size: 0.75rem;
+     color: #9ca3af;
+     border-bottom: 1px solid #374151;
+   }
+   .dropdown-menu button {
+     width: 100%;
+     text-align: left;
+     padding: 0.25rem 0.5rem;
+     font-size: 0.75rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: transparent;
+     border: none;
+     color: #e5e7eb;
+     cursor: pointer;
+   }
+   .dropdown-menu button:hover {
+     background: #374151;
+   }
+   .dropdown-menu button.selected {
+     background: #3b82f6;
+     color: #fff;
+   }
+   .dropdown-menu textarea {
+     width: 100%;
+     height: 5rem;
+     padding: 0.375rem;
+     font-size: 0.75rem;
+     border: 1px solid #4b5563;
+     border-radius: 0.375rem;
+     background: #374151;
+     color: #e5e7eb;
+     resize: none;
+   }
+   
+   /* ----------------------------------
+      5) Actions row
+      ---------------------------------- */
+   .actions {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.5rem 0.75rem;
+     border-top: 1px solid #d1d5db;
+     background: #f3f4f6;
+   }
+   html.dark .actions {
+     border-top: 1px solid #374151;
+     background: #111827;
+   }
+   .actions .btn-group {
+     display: flex;
+     gap: 0.5rem;
+   }
+   
+   /* ----------------------------------
+      6) Buttons
+      ---------------------------------- */
+   .btn {
+     display: inline-flex;
+     align-items: center;
+     border-radius: 0.375rem;
+     font-weight: 500;
+     transition: background-color .2s;
+   }
+   .btn svg { margin-right: 0.25rem; }
+   .btn--sm { padding: 0.25rem 0.75rem; font-size: 0.75rem; }
+   .btn--md { padding: 0.5rem 1rem; font-size: 0.875rem; }
+   .btn--lg { padding: 0.625rem 1.25rem; font-size: 1rem; }
+   .btn--primary {
+     background: #3b82f6; color: #fff;
+   }
+   .btn--primary:hover { background: #2563eb; }
+   .btn--secondary {
+     background: #374151; color: #e5e7eb;
+   }
+   html:not(.dark) .btn--secondary {
+     background: #e5e7eb; color: #1f2937;
+   }
+   .btn--secondary:hover {
+     background: #1f2937; color: #f3f4f6;
+   }
+   .btn--disabled {
+     opacity: .5; cursor: not-allowed;
+   }
+   
+   /* ----------------------------------
+      7) Toggle switch
+      ---------------------------------- */
+   .toggle {
+     display: inline-block;
+     position: relative;
+     cursor: pointer;
+   }
+   .toggle__track {
+     border-radius: 9999px;
+     transition: background-color .2s;
+   }
+   .toggle__thumb {
+     position: absolute;
+     top: 0; left: 0;
+     background: #fff;
+     border-radius: 50%;
+     transition: transform .2s;
+   }
+   .toggle--sm .toggle__track { width: 2rem; height: 1rem; background: #9ca3af; }
+   .toggle--sm .toggle__thumb { width: 1rem; height: 1rem; }
+   .toggle--sm.checked .toggle__track { background: #3b82f6; }
+   .toggle--sm.checked .toggle__thumb { transform: translateX(1rem); }
+   .toggle--md .toggle__track { width: 3rem; height: 1.5rem; background: #9ca3af; }
+   .toggle--md .toggle__thumb { width: 1.5rem; height: 1.5rem; }
+   .toggle--md.checked .toggle__track { background: #3b82f6; }
+   .toggle--md.checked .toggle__thumb { transform: translateX(1.5rem); }
+   
+   /* ----------------------------------
+      8) Toast
+      ---------------------------------- */
+   .toast {
+     position: absolute;
+     top: 50%; left: 50%;
+     transform: translate(-50%, -50%);
+     background: rgba(0,0,0,0.75);
+     color: #fff;
+     font-size: 0.75rem;
+     padding: 0.25rem 0.75rem;
+     border-radius: 0.375rem;
+   }
+   

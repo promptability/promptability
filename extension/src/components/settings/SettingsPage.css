@@ -1,0 +1,66 @@
+.settings-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .settings-page__body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  .settings-page__sidebar {
+    width: 100px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .settings-page__nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    color: var(--text);
+  }
+  .settings-page__nav-btn:hover {
+    background: var(--hover-bg);
+  }
+  .settings-page__nav-btn.active {
+    background: var(--active-bg);
+    color: #fff;
+  }
+  .settings-page__nav-btn.logout {
+    margin-top: auto;
+    color: var(--logout-text);
+    background: var(--logout-bg);
+  }
+  .settings-page__content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  .settings-page__about h3 {
+    margin-top: 0;
+  }
+  .settings-page.light {
+    --border: #e5e7eb;
+    --text: #374151;
+    --hover-bg: #f3f4f6;
+    --active-bg: #3b82f6;
+    --logout-bg: #fee2e2;
+    --logout-text: #991b1b;
+  }
+  .settings-page.dark {
+    --border: #374151;
+    --text: #d1d5db;
+    --hover-bg: #1f2937;
+    --active-bg: #2563eb;
+    --logout-bg: #7f1d1d;
+    --logout-text: #fee2e2;
+  }
+  

@@ -1,0 +1,55 @@
+.toggle {
+    position: relative;
+    display: inline-block;
+    border-radius: 9999px;
+    background: #9ca3af;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .toggle--checked {
+    background: #3b82f6;
+  }
+  
+  /* sizes */
+  .toggle--sm {
+    width: 32px; height: 16px;
+  }
+  .toggle--md {
+    width: 48px; height: 24px;
+  }
+  .toggle--lg {
+    width: 64px; height: 32px;
+  }
+  
+  /* thumb */
+  .toggle__thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    background: #fff;
+    border-radius: 9999px;
+    transition: transform 0.2s;
+  }
+  .toggle--sm .toggle__thumb {
+    width: 16px; height: 16px;
+  }
+  .toggle--md .toggle__thumb {
+    width: 24px; height: 24px;
+  }
+  .toggle--lg .toggle__thumb {
+    width: 32px; height: 32px;
+  }
+  
+  /* move thumb when checked */
+  .toggle--sm.toggle--checked .toggle__thumb {
+    transform: translate(16px, -50%);
+  }
+  .toggle--md.toggle--checked .toggle__thumb {
+    transform: translate(24px, -50%);
+  }
+  .toggle--lg.toggle--checked .toggle__thumb {
+    transform: translate(32px, -50%);
+  }
+  

@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Promptability AI",
+    "description": "The Smart Prompt Generator for AI Models",
+    "version": "1.0.0",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "storage",
+      "contextMenus"
+    ],
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+
+  }
